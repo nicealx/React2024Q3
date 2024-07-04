@@ -11,6 +11,10 @@ export class Search extends React.Component<ISearch> {
     searchText: this.props.searchText,
   };
 
+  componentDidMount(): void {
+    this.search(this.state.searchText);
+  }
+
   handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       searchText: e.target.value,
@@ -21,9 +25,13 @@ export class Search extends React.Component<ISearch> {
     e.preventDefault();
     const searchValue = this.state.searchText;
     ls.setValue(searchValue);
-    const response = await getItem(searchValue);
-    console.log(response);
+    this.search(searchValue);
   };
+
+  async search(value: string) {
+    const response = await getItem(value);
+    console.log(response);
+  }
 
   render() {
     return (
