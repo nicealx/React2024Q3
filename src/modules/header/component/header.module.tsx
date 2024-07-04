@@ -1,7 +1,7 @@
 import React from 'react';
-import './header.css';
 import { Search } from '../../../components';
 import { ls } from '../../../config/constants';
+import './header.css';
 
 export class Header extends React.Component {
   state = {

@@ -1,0 +1,42 @@
+.card__item {
+  position: relative;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px 1px #000000;
+  overflow: hidden;
+}
+
+.card__title {
+  margin: 10px 0;
+  transition: color 0.5s ease;
+}
+
+.card__item p {
+  margin: 5px 0;
+}
+
+.card__span {
+  font-weight: 700;
+}
+
+.card__backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.card__item:hover .card__title {
+  color: blue;
+}
+
+.card__item:hover .card__backdrop {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(5) rotate(-20deg);
+}
