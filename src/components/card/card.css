@@ -4,6 +4,7 @@
   border-radius: 4px;
   background-color: #ffffff;
   overflow: hidden;
+  user-select: none;
 }
 
 .card__content {

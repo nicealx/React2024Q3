@@ -1,9 +1,7 @@
 import React from 'react';
-import { Cards } from '../../../components';
-import { Loader } from '../../../components/loader/loader.component';
+import { Cards, Loader, NotFound } from '../../../components';
 import { IDataCard } from '../../../interfaces/interface';
 import './main.css';
-import { NotFound } from '../../../components/not-found/not-found';
 
 interface IMain {
   isLoading: boolean;
