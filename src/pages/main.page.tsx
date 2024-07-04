@@ -10,8 +10,10 @@ export default class MainPage extends React.Component {
     cards: [],
     searchText: ls.getValue(),
     search: async (value: string) => {
+      ls.setValue(value);
       this.setState({
         isLoading: true,
+        searchText: ls.getValue(),
       });
       const response = await getItem(value);
       this.setState({
@@ -24,8 +26,16 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <>
-        <Header searchText={this.state.searchText} search={this.state.search} />
-        <Main isLoading={this.state.isLoading} cards={this.state.cards} />
+        <Header
+          isLoading={this.state.isLoading}
+          searchText={this.state.searchText}
+          search={this.state.search}
+        />
+        <Main
+          isLoading={this.state.isLoading}
+          cards={this.state.cards}
+          searchText={this.state.searchText}
+        />
       </>
     );
   }

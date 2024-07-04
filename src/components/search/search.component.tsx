@@ -1,8 +1,8 @@
 import React, { FormEvent } from 'react';
-import { ls } from '../../config/constants';
 import './search.css';
 
 interface ISearch {
+  isLoading: boolean;
   searchText: string;
   search: (value: string) => void;
 }
@@ -25,11 +25,11 @@ export class Search extends React.Component<ISearch> {
   handleSearch = async (e: FormEvent) => {
     e.preventDefault();
     const searchValue = this.state.searchText;
-    ls.setValue(searchValue);
     this.props.search(searchValue);
   };
 
   render() {
+    const isLoading = this.props.isLoading;
     return (
       <form className="search" action="" onSubmit={this.handleSearch}>
         <input
@@ -39,8 +39,9 @@ export class Search extends React.Component<ISearch> {
           onChange={this.handleInputChange}
           value={this.state.searchText}
           placeholder="Enter character name..."
+          disabled={isLoading}
         />
-        <button className="search__button" type="submit">
+        <button className="search__button" type="submit" disabled={isLoading}>
           Search
         </button>
       </form>

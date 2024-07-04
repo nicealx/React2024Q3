@@ -27,7 +27,7 @@
     border-color 0.5s ease;
 }
 
-.search__button:hover {
+.search__button:hover:not(:disabled) {
   color: white;
   border-color: transparent;
   background-color: blue;
