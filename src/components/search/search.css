@@ -6,7 +6,9 @@
 .search__input,
 .search__button {
   outline: none;
+  border-width: 1px;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 .search__input {
@@ -18,4 +20,15 @@
 .search__button {
   cursor: pointer;
   padding: 0 20px;
+  font-weight: 700;
+  transition:
+    color 0.5s ease,
+    background-color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.search__button:hover {
+  color: white;
+  border-color: transparent;
+  background-color: blue;
 }
