@@ -1,10 +1,10 @@
 import React, { FormEvent } from 'react';
-import { getItem } from '../../services/item/item-adapter';
 import { ls } from '../../config/constants';
 import './search.css';
 
 interface ISearch {
   searchText: string;
+  search: (value: string) => void;
 }
 
 export class Search extends React.Component<ISearch> {
@@ -13,7 +13,7 @@ export class Search extends React.Component<ISearch> {
   };
 
   componentDidMount(): void {
-    this.search(this.state.searchText);
+    this.props.search(this.state.searchText);
   }
 
   handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,13 +26,8 @@ export class Search extends React.Component<ISearch> {
     e.preventDefault();
     const searchValue = this.state.searchText;
     ls.setValue(searchValue);
-    this.search(searchValue);
+    this.props.search(searchValue);
   };
-
-  async search(value: string) {
-    const response = await getItem(value);
-    console.log(response);
-  }
 
   render() {
     return (
