@@ -9,9 +9,25 @@ interface IHeader {
 }
 
 export class Header extends React.Component<IHeader> {
+  state = {
+    chashed: false,
+  };
+
+  handleChash = () => {
+    this.setState({
+      chashed: true,
+    });
+  };
+
   render() {
+    if (this.state.chashed) {
+      throw new Error('I crashed!');
+    }
     return (
       <header className="header">
+        <button className="error__button" onClick={this.handleChash}>
+          Test Crash
+        </button>
         <Search
           isLoading={this.props.isLoading}
           searchText={this.props.searchText}

@@ -3,6 +3,7 @@ import { Header } from '../modules/header';
 import { Main } from '../modules/main';
 import { ls } from '../config/constants';
 import { getItem } from '../services/item/item-adapter';
+import { ErrorBoundary } from '../components';
 
 export default class MainPage extends React.Component {
   state = {
@@ -25,7 +26,7 @@ export default class MainPage extends React.Component {
 
   render() {
     return (
-      <>
+      <ErrorBoundary>
         <Header
           isLoading={this.state.isLoading}
           searchText={this.state.searchText}
@@ -36,7 +37,7 @@ export default class MainPage extends React.Component {
           cards={this.state.cards}
           searchText={this.state.searchText}
         />
-      </>
+      </ErrorBoundary>
     );
   }
 }
