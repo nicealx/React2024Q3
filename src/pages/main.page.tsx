@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Header } from '../modules/header';
 import { Main } from '../modules/main';
 import { ls } from '../config/constants';
-import { getItem } from '../services/item/item-adapter';
+import { getData } from '../services/data/data-adapter';
 import { ErrorBoundary } from '../components';
 
 export default class MainPage extends Component {
@@ -16,7 +16,7 @@ export default class MainPage extends Component {
         isLoading: true,
         searchText: ls.getValue(),
       });
-      const response = await getItem(value);
+      const response = await getData(value);
       this.setState({
         isLoading: false,
         cards: response.results,
