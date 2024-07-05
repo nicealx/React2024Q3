@@ -1,13 +1,13 @@
-import React from 'react';
 import { Card } from '../card/card.compomemt';
 import { IDataCard } from '../../interfaces/interface';
+import { Component } from 'react';
 import './cards.css';
 
 interface ICards {
   cards: IDataCard[];
 }
 
-export class Cards extends React.Component<ICards> {
+export class Cards extends Component<ICards> {
   render() {
     const cards = this.props.cards;
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Search } from '../../../components';
 import './header.css';
 
@@ -8,7 +8,7 @@ interface IHeader {
   search: (value: string) => void;
 }
 
-export class Header extends React.Component<IHeader> {
+export class Header extends Component<IHeader> {
   state = {
     chashed: false,
   };

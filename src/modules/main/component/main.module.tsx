@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Cards, Loader, NotFound } from '../../../components';
 import { IDataCard } from '../../../interfaces/interface';
 import './main.css';
@@ -9,7 +9,7 @@ interface IMain {
   searchText: string;
 }
 
-export class Main extends React.Component<IMain> {
+export class Main extends Component<IMain> {
   render() {
     const isLoading = this.props.isLoading;
     const cards = this.props.cards;

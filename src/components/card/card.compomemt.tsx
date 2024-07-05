@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { IDataCard } from '../../interfaces/interface';
 import './card.css';
 
@@ -6,7 +6,7 @@ interface ICard {
   data: IDataCard;
 }
 
-export class Card extends React.Component<ICard> {
+export class Card extends Component<ICard> {
   render() {
     return (
       <div className="card__item">

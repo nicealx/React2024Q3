@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import { Header } from '../modules/header';
 import { Main } from '../modules/main';
 import { ls } from '../config/constants';
 import { getItem } from '../services/item/item-adapter';
 import { ErrorBoundary } from '../components';
 
-export default class MainPage extends React.Component {
+export default class MainPage extends Component {
   state = {
     isLoading: true,
     cards: [],

@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import { ChangeEvent, Component, FormEvent } from 'react';
 import './search.css';
 
 interface ISearch {
@@ -7,7 +7,7 @@ interface ISearch {
   search: (value: string) => void;
 }
 
-export class Search extends React.Component<ISearch> {
+export class Search extends Component<ISearch> {
   state = {
     searchText: this.props.searchText,
   };
@@ -16,7 +16,7 @@ export class Search extends React.Component<ISearch> {
     this.props.search(this.state.searchText);
   }
 
-  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     this.setState({
       searchText: e.target.value,
     });
