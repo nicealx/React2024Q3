@@ -4,13 +4,13 @@ import { AppContext } from '../../../store/AppContext';
 import './main.css';
 
 export const Main: FC = () => {
-  const { isLoading, cards, searchText } = useContext(AppContext);
+  const { isLoading, peoples, searchText } = useContext(AppContext);
   return (
     <main className="main">
       {isLoading ? (
         <Loader />
-      ) : cards.length ? (
-        <Cards cards={cards}></Cards>
+      ) : peoples.length ? (
+        <Cards cards={peoples}></Cards>
       ) : (
         <NotFound searchText={searchText} />
       )}

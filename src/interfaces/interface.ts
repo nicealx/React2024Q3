@@ -31,7 +31,7 @@ export type IDataCard = Pick<
 
 export interface IAppContext {
   isLoading: boolean;
-  cards: IPeople[];
+  peoples: IPeople[];
   searchText: string;
   search: (value: string) => Promise<void>;
 }

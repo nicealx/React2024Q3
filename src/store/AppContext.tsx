@@ -3,7 +3,7 @@ import { IAppContext } from '../interfaces/interface';
 
 export const AppContext = createContext<IAppContext>({
   isLoading: true,
-  cards: [],
+  peoples: [],
   searchText: '',
   search: async () => {},
 });
