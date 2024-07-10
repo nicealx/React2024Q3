@@ -31,12 +31,13 @@ export const MainPage: FC = () => {
     isLoading,
     cards,
     searchText,
+    search,
   };
 
   return (
     <AppContext.Provider value={initialContext}>
       <ErrorBoundary>
-        <Header search={search} />
+        <Header />
         <Main />
       </ErrorBoundary>
     </AppContext.Provider>

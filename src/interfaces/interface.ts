@@ -33,4 +33,5 @@ export interface IAppContext {
   isLoading: boolean;
   cards: IPeople[];
   searchText: string;
+  search: (value: string) => Promise<void>;
 }
