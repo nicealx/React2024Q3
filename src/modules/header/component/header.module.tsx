@@ -4,14 +4,13 @@ import './header.css';
 
 interface IHeader {
   isLoading: boolean;
-  searchText: string;
   search: (value: string) => void;
 }
 
-export const Header: FC<IHeader> = ({ isLoading, searchText, search }) => {
+export const Header: FC<IHeader> = ({ isLoading, search }) => {
   return (
     <header className="header">
-      <Search isLoading={isLoading} searchText={searchText} search={search} />
+      <Search isLoading={isLoading} search={search} />
     </header>
   );
 };

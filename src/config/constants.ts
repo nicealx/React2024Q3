@@ -1,3 +1,1 @@
-import LS from '../hooks/ls';
-
-export const ls = new LS('searchValue');
+export const STORAGE_VALUE = 'searchText';
