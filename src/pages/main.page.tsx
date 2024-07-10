@@ -5,6 +5,7 @@ import { FC, useCallback, useEffect, useState } from 'react';
 import { IPeople } from '../interfaces/interface';
 import { Main } from '../modules/main';
 import { useStorage } from '../hooks/useStorage';
+import { AppContext } from '../store/AppContext';
 
 export const MainPage: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,10 +27,18 @@ export const MainPage: FC = () => {
     search(searchText);
   }, [search, searchText]);
 
+  const initialContext = {
+    isLoading,
+    cards,
+    searchText,
+  };
+
   return (
-    <ErrorBoundary>
-      <Header isLoading={isLoading} search={search} />
-      <Main isLoading={isLoading} cards={cards} searchText={searchText} />
-    </ErrorBoundary>
+    <AppContext.Provider value={initialContext}>
+      <ErrorBoundary>
+        <Header search={search} />
+        <Main />
+      </ErrorBoundary>
+    </AppContext.Provider>
   );
 };

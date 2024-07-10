@@ -28,3 +28,9 @@ export type IDataCard = Pick<
   IPeople,
   'name' | 'hair_color' | 'height' | 'mass'
 >;
+
+export interface IAppContext {
+  isLoading: boolean;
+  cards: IPeople[];
+  searchText: string;
+}

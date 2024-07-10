@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, FormEvent } from 'react';
-import './search.css';
 import { useStorage } from '../../hooks/useStorage';
+import './search.css';
 
 interface ISearch {
   isLoading: boolean;
