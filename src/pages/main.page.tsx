@@ -1,43 +1,33 @@
-import { Component } from 'react';
 import { Header } from '../modules/header';
-import { Main } from '../modules/main';
 import { ls } from '../config/constants';
 import { getData } from '../services/data/data-adapter';
 import { ErrorBoundary } from '../components';
+import { FC, useEffect, useState } from 'react';
+import { IPeople } from '../interfaces/interface';
+import { Main } from '../modules/main';
 
-export default class MainPage extends Component {
-  state = {
-    isLoading: true,
-    cards: [],
-    searchText: ls.getValue(),
-    search: async (value: string) => {
-      ls.setValue(value);
-      this.setState({
-        isLoading: true,
-        searchText: ls.getValue(),
-      });
-      const response = await getData(value);
-      this.setState({
-        isLoading: false,
-        cards: response.results,
-      });
-    },
+export const MainPage: FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [cards, setCards] = useState<IPeople[]>([]);
+  const [searchText, setSearchText] = useState(ls.getValue());
+
+  const search = async (value: string) => {
+    ls.setValue(value);
+    setSearchText(value);
+    setIsLoading(true);
+    const response = await getData(value);
+    setIsLoading(false);
+    setCards(response.results);
   };
 
-  render() {
-    return (
-      <ErrorBoundary>
-        <Header
-          isLoading={this.state.isLoading}
-          searchText={this.state.searchText}
-          search={this.state.search}
-        />
-        <Main
-          isLoading={this.state.isLoading}
-          cards={this.state.cards}
-          searchText={this.state.searchText}
-        />
-      </ErrorBoundary>
-    );
-  }
-}
+  useEffect(() => {
+    search(searchText);
+  }, [searchText]);
+
+  return (
+    <ErrorBoundary>
+      <Header isLoading={isLoading} searchText={searchText} search={search} />
+      <Main isLoading={isLoading} cards={cards} searchText={searchText} />
+    </ErrorBoundary>
+  );
+};

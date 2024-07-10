@@ -1,4 +1,4 @@
-import { ChangeEvent, Component, FormEvent } from 'react';
+import { ChangeEvent, FC, FormEvent, useState } from 'react';
 import './search.css';
 
 interface ISearch {
@@ -7,44 +7,32 @@ interface ISearch {
   search: (value: string) => void;
 }
 
-export class Search extends Component<ISearch> {
-  state = {
-    searchText: this.props.searchText,
+export const Search: FC<ISearch> = ({ isLoading, searchText, search }) => {
+  const [searchValue, setSearchValue] = useState<string>(searchText);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
   };
 
-  componentDidMount(): void {
-    this.props.search(this.state.searchText);
-  }
-
-  handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      searchText: e.target.value,
-    });
-  };
-
-  handleSearch = async (e: FormEvent) => {
+  const handleSearch = async (e: FormEvent) => {
     e.preventDefault();
-    const searchValue = this.state.searchText;
-    this.props.search(searchValue);
+    search(searchValue);
   };
 
-  render() {
-    const isLoading = this.props.isLoading;
-    return (
-      <form className="search" action="" onSubmit={this.handleSearch}>
-        <input
-          className="search__input"
-          type="text"
-          name="search"
-          onChange={this.handleInputChange}
-          value={this.state.searchText}
-          placeholder="Enter character name..."
-          disabled={isLoading}
-        />
-        <button className="search__button" type="submit" disabled={isLoading}>
-          Search
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form className="search" action="" onSubmit={handleSearch}>
+      <input
+        className="search__input"
+        type="text"
+        name="search"
+        onChange={handleInputChange}
+        value={searchValue}
+        placeholder="Enter character name..."
+        disabled={isLoading}
+      />
+      <button className="search__button" type="submit" disabled={isLoading}>
+        Search
+      </button>
+    </form>
+  );
+};
