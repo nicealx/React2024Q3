@@ -4,7 +4,7 @@ import { ErrorBoundary } from '../components';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { IPeople } from '../interfaces/interface';
 import { Main } from '../modules/main';
-import { useStorage } from '../hooks/useSaveStorage';
+import { useStorage } from '../hooks/useStorage';
 
 export const MainPage: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
