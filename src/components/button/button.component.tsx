@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
 interface IButton {
   buttonClass: string;
   buttonType: 'submit' | 'reset' | 'button';
   buttonText: string;
-  buttonStatus: boolean;
-  handlerClick?: () => void;
+  buttonStatus?: boolean;
+  handlerClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: FC<IButton> = ({
@@ -13,7 +13,7 @@ export const Button: FC<IButton> = ({
   buttonType,
   buttonText,
   buttonStatus,
-  handlerClick,
+  handlerClick = () => {},
 }) => {
   return (
     <button

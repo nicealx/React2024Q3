@@ -29,7 +29,7 @@ export const Search: FC = () => {
         disabled={isLoading}
       />
       <Button
-        buttonClass="search__button"
+        buttonClass="button search__button"
         buttonType="submit"
         buttonStatus={isLoading}
         buttonText="Search"
