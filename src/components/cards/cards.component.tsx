@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Card } from '../card/card.compomemt';
-import { IPeopleDataCard } from '../../interfaces/interface';
+import { Card } from '../card/card.component';
+import { IPeople } from '../../interfaces/interface';
 import './cards.css';
 
 interface ICards {
-  cards: IPeopleDataCard[];
+  cards: IPeople[];
 }
 
 export const Cards: FC<ICards> = ({ cards }) => {

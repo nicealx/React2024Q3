@@ -21,11 +21,6 @@ export interface IPeopleData {
   results: IPeople[];
 }
 
-export type IPeopleDataCard = Pick<
-  IPeople,
-  'name' | 'hair_color' | 'height' | 'mass' | 'url'
->;
-
 export interface IAppContext {
   isLoading: boolean;
   peoples: IPeople[];
