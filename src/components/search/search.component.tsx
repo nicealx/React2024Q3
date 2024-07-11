@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, FormEvent } from 'react';
 import { useStorage } from '../../hooks/useStorage';
 import './search.css';
+import { Button } from '../button/button.component';
 
 interface ISearch {
   isLoading: boolean;
@@ -30,9 +31,12 @@ export const Search: FC<ISearch> = ({ isLoading, search }) => {
         placeholder="Enter character name..."
         disabled={isLoading}
       />
-      <button className="search__button" type="submit" disabled={isLoading}>
-        Search
-      </button>
+      <Button
+        buttonClass="search__button"
+        buttonType="submit"
+        buttonStatus={isLoading}
+        buttonText="Search"
+      />
     </form>
   );
 };

@@ -3,3 +3,4 @@ export { Cards } from './cards/cards.component';
 export { ErrorBoundary } from './error/error.component';
 export { NotFound } from './not-found/not-found.component';
 export { Loader } from './loader/loader.component';
+export { Button } from './button/button.component';
