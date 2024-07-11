@@ -1,7 +1,14 @@
 .card__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, 100px);
   gap: 20px;
+  width: 100%;
+  transition: width 0.5s ease;
+}
+
+.card__list.active {
+  width: 80%;
 }
 
 @media screen and (max-width: 560px) {

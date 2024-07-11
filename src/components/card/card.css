@@ -1,10 +1,5 @@
 .card__item {
-  position: relative;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #ffffff;
-  overflow: hidden;
-  user-select: none;
+  color: inherit;
 }
 
 .card__content {
@@ -14,14 +9,6 @@
 .card__title {
   margin: 10px 0;
   transition: color 0.5s ease;
-}
-
-.card__item p {
-  margin: 5px 0;
-}
-
-.card__span {
-  font-weight: 700;
 }
 
 .card__backdrop {

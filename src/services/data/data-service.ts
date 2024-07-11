@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../config/constants';
 import { IData } from '../../interfaces/interface';
 
 export const fetchData = async (text: string): Promise<IData> => {
@@ -5,10 +6,7 @@ export const fetchData = async (text: string): Promise<IData> => {
     const requestOptions = {
       method: 'GET',
     };
-    const response = await fetch(
-      `https://swapi.dev/api/people/?search=${text}`,
-      requestOptions,
-    );
+    const response = await fetch(`${BASE_URL}?search=${text}`, requestOptions);
 
     const data: IData = await response.json();
     return data;

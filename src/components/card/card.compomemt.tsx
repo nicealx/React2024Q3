@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { IDataCard } from '../../interfaces/interface';
+import { BASE_URL } from '../../config/constants';
+import { NavLink } from 'react-router-dom';
 import './card.css';
 
 interface ICard {
@@ -7,22 +9,23 @@ interface ICard {
 }
 
 export const Card: FC<ICard> = ({ data }) => {
-  const { name, height, mass, hair_color } = data;
+  const { name, url } = data;
+  const currentUrl = url.replace(BASE_URL, 'info/');
   return (
-    <div className="card__item">
+    <NavLink
+      to={currentUrl}
+      className={({ isActive, isPending }) =>
+        isActive
+          ? 'card card__item active'
+          : isPending
+            ? 'card card__item pending'
+            : 'card card__item'
+      }
+    >
       <div className="card__content">
         <h2 className="card__title">{name}</h2>
-        <p>
-          <span className="card__span">Heigth:</span> {height}
-        </p>
-        <p>
-          <span className="card__span">Mass:</span> {mass}
-        </p>
-        <p>
-          <span className="card__span">Hair color:</span> {hair_color}
-        </p>
       </div>
       <div className="card__backdrop">{name}</div>
-    </div>
+    </NavLink>
   );
 };

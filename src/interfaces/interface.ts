@@ -26,7 +26,7 @@ export interface IData {
 
 export type IDataCard = Pick<
   IPeople,
-  'name' | 'hair_color' | 'height' | 'mass'
+  'name' | 'hair_color' | 'height' | 'mass' | 'url'
 >;
 
 export interface IAppContext {
