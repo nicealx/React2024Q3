@@ -7,13 +7,11 @@ import { Page404 } from './pages/404/404.page';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <section className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route path="*" element={<Page404 />} />
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </BrowserRouter>
-    </section>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Page404 />} />
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

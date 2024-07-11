@@ -1,5 +1,6 @@
 import { FC } from 'react';
+import './404.css';
 
 export const Page404: FC = () => {
-  return <div>Not Found</div>;
+  return <div className="error-404">Not Found</div>;
 };
