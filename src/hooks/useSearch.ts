@@ -11,9 +11,9 @@ export const useSearch = () => {
   const search = useCallback(
     async (value: string) => {
       setIsLoading(true);
-      const response = await getData(value);
+      const peoplesData = await getData(value);
       setIsLoading(false);
-      setPeoples(response.results);
+      setPeoples(peoplesData);
       setSearchText(value);
     },
     [setSearchText],

@@ -1,14 +1,20 @@
 import { BASE_URL } from '../../config/constants';
-import { IData } from '../../interfaces/interface';
+import { IPeopleData } from '../../interfaces/interface';
 
-export const fetchData = async (text: string): Promise<IData> => {
+export const fetchData = async (
+  text: string,
+  page: number,
+): Promise<IPeopleData> => {
   try {
     const requestOptions = {
       method: 'GET',
     };
-    const response = await fetch(`${BASE_URL}?search=${text}`, requestOptions);
+    const response = await fetch(
+      `${BASE_URL}?search=${text}&page=${page}`,
+      requestOptions,
+    );
 
-    const data: IData = await response.json();
+    const data: IPeopleData = await response.json();
     return data;
   } catch (error) {
     throw new Error('Request error');

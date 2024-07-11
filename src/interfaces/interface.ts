@@ -17,14 +17,11 @@ export interface IPeople {
   edited: string;
 }
 
-export interface IData {
-  count: number;
-  next: string | null;
-  previous: string | null;
+export interface IPeopleData {
   results: IPeople[];
 }
 
-export type IDataCard = Pick<
+export type IPeopleDataCard = Pick<
   IPeople,
   'name' | 'hair_color' | 'height' | 'mass' | 'url'
 >;
@@ -32,6 +29,7 @@ export type IDataCard = Pick<
 export interface IAppContext {
   isLoading: boolean;
   peoples: IPeople[];
+  pagination: number[];
   searchText: string;
   search: (value: string) => Promise<void>;
 }

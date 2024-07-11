@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { IDataCard } from '../../interfaces/interface';
+import { IPeopleDataCard } from '../../interfaces/interface';
 import { BASE_URL } from '../../config/constants';
 import { NavLink } from 'react-router-dom';
 import './card.css';
 
 interface ICard {
-  data: IDataCard;
+  data: IPeopleDataCard;
 }
 
 export const Card: FC<ICard> = ({ data }) => {
