@@ -1,15 +1,12 @@
-import { ChangeEvent, FC, FormEvent } from 'react';
+import { ChangeEvent, FC, FormEvent, useContext } from 'react';
 import { useStorage } from '../../hooks/useStorage';
 import './search.css';
 import { Button } from '../button/button.component';
+import { AppContext } from '../../store/AppContext';
 
-interface ISearch {
-  isLoading: boolean;
-  search: (value: string) => void;
-}
-
-export const Search: FC<ISearch> = ({ isLoading, search }) => {
+export const Search: FC = () => {
   const [searchText, setSearchText] = useStorage();
+  const { isLoading, search } = useContext(AppContext);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
