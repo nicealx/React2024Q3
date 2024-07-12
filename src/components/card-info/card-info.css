@@ -29,3 +29,7 @@
 .card-info__span {
   font-weight: 700;
 }
+
+.card-info__not-found {
+  text-align: center;
+}

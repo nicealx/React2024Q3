@@ -27,30 +27,38 @@ export const CardInfo: FC = () => {
         <Link to={'..'} className=" card-info__close">
           &#10006;
         </Link>
-        <p>
-          Name: <span className="card-info__span">{name}</span>
-        </p>
-        <p>
-          Birth year: <span className="card-info__span">{birth_year}</span>
-        </p>
-        <p>
-          Eye color: <span className="card-info__span">{eye_color}</span>
-        </p>
-        <p>
-          Gender: <span className="card-info__span">{gender}</span>
-        </p>
-        <p>
-          Hair color: <span className="card-info__span">{hair_color}</span>
-        </p>
-        <p>
-          Height: <span className="card-info__span">{height}</span>
-        </p>
-        <p>
-          Mass: <span className="card-info__span">{mass}</span>
-        </p>
-        <p>
-          Skin color: <span className="card-info__span">{skin_color}</span>
-        </p>
+        {people.url ? (
+          <>
+            <p>
+              Name: <span className="card-info__span">{name}</span>
+            </p>
+            <p>
+              Birth year: <span className="card-info__span">{birth_year}</span>
+            </p>
+            <p>
+              Eye color: <span className="card-info__span">{eye_color}</span>
+            </p>
+            <p>
+              Gender: <span className="card-info__span">{gender}</span>
+            </p>
+            <p>
+              Hair color: <span className="card-info__span">{hair_color}</span>
+            </p>
+            <p>
+              Height: <span className="card-info__span">{height}</span>
+            </p>
+            <p>
+              Mass: <span className="card-info__span">{mass}</span>
+            </p>
+            <p>
+              Skin color: <span className="card-info__span">{skin_color}</span>
+            </p>
+          </>
+        ) : (
+          <p className="card-info__not-found">
+            Character is {people.detail.toLowerCase()}
+          </p>
+        )}
       </div>
     </div>
   );

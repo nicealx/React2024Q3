@@ -15,6 +15,7 @@ export interface IPeople {
   url: string;
   created: string;
   edited: string;
+  detail: string;
 }
 
 export interface IPeopleData {
