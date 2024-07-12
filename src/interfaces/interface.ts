@@ -25,5 +25,5 @@ export interface IAppContext {
   isLoading: boolean;
   peoples: IPeople[];
   searchText: string;
-  search: (value: string) => Promise<void>;
+  searchHandler: (value: string) => Promise<void>;
 }

@@ -8,7 +8,7 @@ export const useSearch = () => {
   const [peoples, setPeoples] = useState<IPeople[]>([]);
   const [searchText, setSearchText] = useStorage();
 
-  const search = useCallback(
+  const searchHandler = useCallback(
     async (value: string) => {
       setIsLoading(true);
       const peoplesData = await getData(value);
@@ -20,14 +20,14 @@ export const useSearch = () => {
   );
 
   useEffect(() => {
-    search(searchText);
-  }, [search, searchText]);
+    searchHandler(searchText);
+  }, [searchHandler, searchText]);
 
   const initialContext = {
     isLoading,
     peoples,
     searchText,
-    search,
+    searchHandler,
   };
 
   return initialContext;

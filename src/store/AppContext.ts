@@ -5,5 +5,5 @@ export const AppContext = createContext<IAppContext>({
   isLoading: true,
   peoples: [],
   searchText: '',
-  search: async () => {},
+  searchHandler: async () => {},
 });

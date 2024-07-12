@@ -6,7 +6,7 @@ import './search.css';
 
 export const Search: FC = () => {
   const [searchText, setSearchText] = useStorage();
-  const { isLoading, search } = useContext(AppContext);
+  const { isLoading, searchHandler } = useContext(AppContext);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -14,7 +14,7 @@ export const Search: FC = () => {
 
   const handleSearch = async (e: FormEvent) => {
     e.preventDefault();
-    search(searchText);
+    searchHandler(searchText);
   };
 
   return (
