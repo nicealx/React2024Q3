@@ -8,20 +8,20 @@ export const useSearch = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [peoples, setPeoples] = useState<IPeople[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get('searchText'));
-  const [searchText, setSearchText] = useStorage(search ?? '');
+  const [query, setQuery] = useState(searchParams.get('query'));
+  const [searchText, setSearchText] = useStorage(query ?? '');
 
   const searchHandler = useCallback(
-    async (value: string) => {
+    async (query: string) => {
       setIsLoading(true);
-      const peoplesData = await getData(value);
+      setSearchParams({ query });
+      setSearchText(query);
+      setQuery(query);
+      const peoplesData = await getData(query);
       setIsLoading(false);
       setPeoples(peoplesData);
-      setSearch(value);
-      setSearchText(value);
-      setSearchParams({ searchText });
     },
-    [setSearchText, setSearchParams, searchText],
+    [setSearchText, setSearchParams],
   );
 
   useEffect(() => {
