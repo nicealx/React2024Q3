@@ -24,7 +24,6 @@ export interface IPeopleData {
 export interface IAppContext {
   isLoading: boolean;
   peoples: IPeople[];
-  pagination: number[];
   searchText: string;
   search: (value: string) => Promise<void>;
 }

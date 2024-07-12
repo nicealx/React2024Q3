@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useContext } from 'react';
 import { useStorage } from '../../hooks/useStorage';
-import './search.css';
 import { Button } from '../button/button.component';
 import { AppContext } from '../../store/AppContext';
+import './search.css';
 
 export const Search: FC = () => {
   const [searchText, setSearchText] = useStorage();
