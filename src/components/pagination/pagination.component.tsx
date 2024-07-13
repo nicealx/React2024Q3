@@ -2,12 +2,13 @@ import { FC, useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../store/AppContext';
 import { Link, useSearchParams } from 'react-router-dom';
 import './pagination.css';
+import { QUERY_PAGE_NAME } from '../../config/constants';
 
 export const Pagination: FC = () => {
   const { pages, setPage, page } = useContext(AppContext);
   const [searchParams] = useSearchParams();
   const [activePage, setActivePage] = useState<string>(
-    searchParams.get('page') || page,
+    searchParams.get(QUERY_PAGE_NAME) || page,
   );
   const handleClick = (currentPage: string) => {
     setPage(currentPage);

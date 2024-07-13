@@ -11,11 +11,12 @@ import { Button } from '../button/button.component';
 import { AppContext } from '../../store/AppContext';
 import './search.css';
 import { useSearchParams } from 'react-router-dom';
+import { QUERY_SEARCH_NAME } from '../../config/constants';
 
 export const Search: FC = () => {
   const { isLoading, searchHandler, page, setPage } = useContext(AppContext);
   const [searchParams] = useSearchParams();
-  const [search] = useState(searchParams.get('searchText'));
+  const [search] = useState(searchParams.get(QUERY_SEARCH_NAME));
   const [searchText, setSearchText] = useStorage(search ?? '');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

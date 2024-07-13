@@ -3,7 +3,7 @@ import { STORAGE_VALUE } from '../config/constants';
 
 export const useStorage = (initialValue?: string) => {
   const getStorageValue = localStorage.getItem(STORAGE_VALUE);
-  const defaultValue = getStorageValue ? getStorageValue : initialValue ?? '';
+  const defaultValue = initialValue ?? getStorageValue ?? '';
   const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {
