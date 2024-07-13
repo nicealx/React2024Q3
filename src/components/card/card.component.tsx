@@ -3,6 +3,7 @@ import { IPeople } from '../../interfaces/interface';
 import { BASE_URL } from '../../config/constants';
 import { NavLink } from 'react-router-dom';
 import './card.css';
+import { Loader } from '../loader/loader.component';
 
 interface ICard {
   data: IPeople;
@@ -22,6 +23,7 @@ export const Card: FC<ICard> = ({ data }) => {
             : 'card card__item'
       }
     >
+      <Loader />
       <div className="card__content">
         <h2 className="card__title">{name}</h2>
       </div>

@@ -1,5 +1,10 @@
 .card__item {
   color: inherit;
+  transition: opacity 0.5s;
+}
+
+.card__item .loader {
+  display: none;
 }
 
 .card__content {
@@ -30,7 +35,12 @@
 }
 
 .card__item:hover .card__backdrop,
-.card__item.active .card__backdrop {
+.card__item.active .card__backdrop,
+.card__item.pending .card__backdrop {
   opacity: 0.2;
   transform: translate(-50%, -50%) scale(5) rotate(-20deg);
+}
+
+.card__item.pending .loader {
+  display: block;
 }
