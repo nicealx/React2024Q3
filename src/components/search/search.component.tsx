@@ -34,7 +34,7 @@ export const Search: FC = () => {
   }, [setPage, page]);
 
   return (
-    <form className="search" action="" onSubmit={handleSubmit}>
+    <form className="search" role="search" onSubmit={handleSubmit}>
       <input
         className="search__input"
         type="text"
