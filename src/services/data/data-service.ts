@@ -3,7 +3,7 @@ import { IPeopleData } from '../../interfaces/interface';
 
 export const fetchData = async (
   text: string,
-  page: number,
+  page: string,
 ): Promise<IPeopleData> => {
   try {
     const requestOptions = {

@@ -10,15 +10,19 @@ export const Main: FC = () => {
     <main className="main">
       {isLoading ? (
         <Loader />
-      ) : peoples.length ? (
-        <>
-          <div className="main__wrap">
-            <Cards cards={peoples} />
-          </div>
-          <Outlet />
-        </>
+      ) : Array.isArray(peoples) ? (
+        peoples.length ? (
+          <>
+            <div className="main__wrap">
+              <Cards cards={peoples} />
+            </div>
+            <Outlet />
+          </>
+        ) : (
+          <NotFound searchText={searchText} />
+        )
       ) : (
-        <NotFound searchText={searchText} />
+        'Page not found'
       )}
     </main>
   );

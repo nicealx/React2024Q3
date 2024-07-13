@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { Main } from '../../modules/main';
 import { AppContext } from '../../store/AppContext';
 import { useSearch } from '../../hooks/useSearch';
+import { Pagination } from '../../components/pagination/pagination.component';
 
 export const MainPage: FC = () => {
   const initialContext = useSearch();
@@ -13,6 +14,7 @@ export const MainPage: FC = () => {
       <ErrorBoundary>
         <Header />
         <Main />
+        <Pagination />
       </ErrorBoundary>
     </AppContext.Provider>
   );

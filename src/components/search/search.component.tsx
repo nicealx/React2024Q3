@@ -6,10 +6,11 @@ import './search.css';
 import { useSearchParams } from 'react-router-dom';
 
 export const Search: FC = () => {
-  const { isLoading, searchHandler } = useContext(AppContext);
+  const { isLoading, searchHandler, page, setPage } = useContext(AppContext);
   const [searchParams] = useSearchParams();
   const [search] = useState(searchParams.get('searchText'));
   const [searchText, setSearchText] = useStorage(search ?? '');
+  const [defaultPage, setDefaultPage] = useState(page);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -17,7 +18,9 @@ export const Search: FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    searchHandler(searchText);
+    setDefaultPage((p) => p.replace(page, '1'));
+    setPage(defaultPage);
+    searchHandler(searchText, defaultPage);
   };
 
   return (

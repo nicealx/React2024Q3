@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface IPeople {
   name: string;
   birth_year: string;
@@ -20,11 +22,16 @@ export interface IPeople {
 
 export interface IPeopleData {
   results: IPeople[];
+  count: number;
+  pages: string[];
 }
 
 export interface IAppContext {
   isLoading: boolean;
   peoples: IPeople[];
   searchText: string;
-  searchHandler: (value: string) => Promise<void>;
+  page: string;
+  pages: string[];
+  setPage: Dispatch<SetStateAction<string>>;
+  searchHandler: (value: string, page: string) => Promise<void>;
 }
