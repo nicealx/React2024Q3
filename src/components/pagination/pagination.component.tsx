@@ -1,18 +1,22 @@
-import { FC, useContext, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../store/AppContext';
 import { Link, useSearchParams } from 'react-router-dom';
 import './pagination.css';
 
 export const Pagination: FC = () => {
-  const { pages, setPage } = useContext(AppContext);
+  const { pages, setPage, page } = useContext(AppContext);
   const [searchParams] = useSearchParams();
   const [activePage, setActivePage] = useState<string>(
-    searchParams.get('page') || '1',
+    searchParams.get('page') || page,
   );
-  const handleClick = (page: string) => {
-    setPage(page);
-    setActivePage(page);
+  const handleClick = (currentPage: string) => {
+    setPage(currentPage);
+    setActivePage(currentPage);
   };
+
+  useEffect(() => {
+    setActivePage(page);
+  }, [page]);
 
   return (
     <div className="pagination">

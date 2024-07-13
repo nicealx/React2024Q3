@@ -1,4 +1,11 @@
-import { ChangeEvent, FC, FormEvent, useContext, useState } from 'react';
+import {
+  ChangeEvent,
+  FC,
+  FormEvent,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { useStorage } from '../../hooks/useStorage';
 import { Button } from '../button/button.component';
 import { AppContext } from '../../store/AppContext';
@@ -10,7 +17,6 @@ export const Search: FC = () => {
   const [searchParams] = useSearchParams();
   const [search] = useState(searchParams.get('searchText'));
   const [searchText, setSearchText] = useStorage(search ?? '');
-  const [defaultPage, setDefaultPage] = useState(page);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -18,10 +24,13 @@ export const Search: FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setDefaultPage((p) => p.replace(page, '1'));
-    setPage(defaultPage);
-    searchHandler(searchText, defaultPage);
+    setPage('1');
+    searchHandler(searchText, page);
   };
+
+  useEffect(() => {
+    setPage(page);
+  }, [setPage, page]);
 
   return (
     <form className="search" action="" onSubmit={handleSubmit}>
