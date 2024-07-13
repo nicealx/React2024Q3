@@ -7,6 +7,7 @@
 .card-info__detail {
   display: flex;
   flex-direction: column;
+  min-height: 250px;
 }
 
 .card-info__close {
@@ -20,6 +21,10 @@
 
 .card-info__close:hover {
   color: rgba(255, 0, 0, 0.5) !important;
+}
+
+.card-info__title {
+  margin: 0;
 }
 
 .card-info__detail p {

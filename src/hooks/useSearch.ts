@@ -20,9 +20,9 @@ export const useSearch = () => {
 
   const searchHandler = useCallback(
     async (query: string, page: string) => {
+      setIsLoading(true);
       setSearchText(query);
       setSearch(query);
-      setIsLoading(true);
       const peoplesData = await getData(query, page);
       setPages(peoplesData.pages);
       setPeoples(peoplesData.results);
@@ -33,8 +33,11 @@ export const useSearch = () => {
 
   useEffect(() => {
     setSearchText(search);
+  }, [setSearchText, search]);
+
+  useEffect(() => {
     setSearchParams({ search, page });
-  }, [setSearchParams, setSearchText, page, search]);
+  }, [setSearchParams, search, page]);
 
   useEffect(() => {
     searchHandler(searchText, page);

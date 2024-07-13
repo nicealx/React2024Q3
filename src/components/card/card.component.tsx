@@ -10,10 +10,10 @@ interface ICard {
 
 export const Card: FC<ICard> = ({ data }) => {
   const { name, url } = data;
-  const currentUrl = url.replace(BASE_URL, 'info/');
+  const id = url.replace(BASE_URL, '');
   return (
     <NavLink
-      to={currentUrl}
+      to={`info/${id}`}
       className={({ isActive, isPending }) =>
         isActive
           ? 'card card__item active'

@@ -24,11 +24,13 @@
   z-index: 1;
 }
 
-.card__item:hover .card__title {
+.card__item:hover .card__title,
+.card__item.active {
   color: blue;
 }
 
-.card__item:hover .card__backdrop {
+.card__item:hover .card__backdrop,
+.card__item.active .card__backdrop {
   opacity: 0.2;
   transform: translate(-50%, -50%) scale(5) rotate(-20deg);
 }
