@@ -6,6 +6,7 @@ import './main.css';
 
 export const Main: FC = () => {
   const { isLoading, peoples, searchText } = useContext(AppContext);
+
   return (
     <main className="main">
       {isLoading ? (
@@ -19,10 +20,10 @@ export const Main: FC = () => {
             <Outlet />
           </>
         ) : (
-          <NotFound searchText={searchText} />
+          <NotFound text={`Nothing was found for the query "${searchText}"`} />
         )
       ) : (
-        'Page not found'
+        <NotFound text={'Page not found'} />
       )}
     </main>
   );
