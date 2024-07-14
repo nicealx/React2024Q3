@@ -60,7 +60,8 @@ export const CardInfo: FC = () => {
               </>
             ) : (
               <p className="card-info__not-found">
-                Character is {people.detail.toLowerCase()}
+                Character is{' '}
+                {people.detail ? people.detail.toLowerCase() : 'not found'}
               </p>
             )}
           </>

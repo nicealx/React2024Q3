@@ -17,7 +17,7 @@ export interface IPeople {
   url: string;
   created: string;
   edited: string;
-  detail: string;
+  detail?: string;
 }
 
 export interface IPeopleData {
@@ -35,3 +35,7 @@ export interface IAppContext {
   setPage: Dispatch<SetStateAction<string>>;
   searchHandler: (value: string, page: string) => Promise<void>;
 }
+
+export type ICard = {
+  data: Pick<IPeople, 'name' | 'url'>;
+};

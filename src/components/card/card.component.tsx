@@ -1,13 +1,9 @@
 import { FC } from 'react';
-import { IPeople } from '../../interfaces/interface';
 import { BASE_URL } from '../../config/constants';
 import { NavLink } from 'react-router-dom';
-import './card.css';
 import { Loader } from '../loader/loader.component';
-
-interface ICard {
-  data: IPeople;
-}
+import { ICard } from '../../interfaces/interface';
+import './card.css';
 
 export const Card: FC<ICard> = ({ data }) => {
   const { name, url } = data;
