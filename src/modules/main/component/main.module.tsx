@@ -20,7 +20,13 @@ export const Main: FC = () => {
             <Outlet />
           </>
         ) : (
-          <NotFound text={`Nothing was found for the query "${searchText}"`} />
+          <NotFound
+            text={
+              searchText
+                ? `Nothing was found for the query "${searchText}"`
+                : 'No data'
+            }
+          />
         )
       ) : (
         <NotFound text={'Page not found'} />
