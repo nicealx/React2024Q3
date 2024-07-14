@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getData } from '../services/data/data-adapter';
-import { useStorage } from './useStorage';
+import { useStorage } from '../hooks/useStorage';
 import { IAppContext, IPeople } from '../interfaces/interface';
 import { useSearchParams } from 'react-router-dom';
 import { QUERY_PAGE_NAME, QUERY_SEARCH_NAME } from '../config/constants';
 
-export const useSearch = () => {
+export const InitialContext = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [peoples, setPeoples] = useState<IPeople[]>([]);
-  const [searchParams, setSearchParams] = useSearchParams();
   const [pages, setPages] = useState<string[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState<string>(
     searchParams.get(QUERY_SEARCH_NAME) || '',
   );

@@ -3,11 +3,11 @@ import { ErrorBoundary } from '../../components';
 import { FC } from 'react';
 import { Main } from '../../modules/main';
 import { AppContext } from '../../store/AppContext';
-import { useSearch } from '../../hooks/useSearch';
 import { Pagination } from '../../components/pagination/pagination.component';
+import { InitialContext } from '../../store/InitialContext';
 
 export const MainPage: FC = () => {
-  const initialContext = useSearch();
+  const initialContext = InitialContext();
 
   return (
     <AppContext.Provider value={initialContext}>
