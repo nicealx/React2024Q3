@@ -1,0 +1,238 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test cards list > Full data > Cards on display 1`] = `
+<DocumentFragment>
+  <div
+    class="card__list"
+  >
+    <a
+      class="card card__item"
+      href="/info/1/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Luke Skywalker
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Luke Skywalker
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/2/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          C-3PO
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        C-3PO
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/3/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          R2-D2
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        R2-D2
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/4/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Darth Vader
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Darth Vader
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/5/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Leia Organa
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Leia Organa
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/6/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Owen Lars
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Owen Lars
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/7/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Beru Whitesun lars
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Beru Whitesun lars
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/8/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          R5-D4
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        R5-D4
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/9/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Biggs Darklighter
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Biggs Darklighter
+      </div>
+    </a>
+    <a
+      class="card card__item"
+      href="/info/10/"
+    >
+      <div
+        class="loader"
+      />
+      <div
+        class="card__content"
+      >
+        <h2
+          class="card__title"
+        >
+          Obi-Wan Kenobi
+        </h2>
+      </div>
+      <div
+        class="card__backdrop"
+      >
+        Obi-Wan Kenobi
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Test cards list > No data > Show no data message 1`] = `
+<DocumentFragment>
+  <div
+    class="card__list"
+  />
+</DocumentFragment>
+`;
