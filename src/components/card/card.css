@@ -1,0 +1,46 @@
+.card__item {
+  color: inherit;
+  transition: opacity 0.5s;
+}
+
+.card__item .loader {
+  display: none;
+}
+
+.card__content {
+  z-index: 2;
+}
+
+.card__title {
+  margin: 10px 0;
+  transition: color 0.5s ease;
+}
+
+.card__backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  z-index: 1;
+}
+
+.card__item:hover .card__title,
+.card__item.active {
+  color: blue;
+}
+
+.card__item:hover .card__backdrop,
+.card__item.active .card__backdrop,
+.card__item.pending .card__backdrop {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(5) rotate(-20deg);
+}
+
+.card__item.pending .loader {
+  display: block;
+}
