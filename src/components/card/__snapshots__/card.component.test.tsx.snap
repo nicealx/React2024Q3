@@ -1,0 +1,67 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test card > Card data exist > Card on display 1`] = `
+<DocumentFragment>
+  <a
+    class="card card__item"
+    href="/info/1"
+  >
+    <div
+      class="loader"
+    />
+    <div
+      class="card__content"
+    >
+      <h2
+        class="card__title"
+      >
+        Name
+      </h2>
+    </div>
+    <div
+      class="card__backdrop"
+    >
+      Name
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Test card > Card data exist > Info card on display 1`] = `
+<DocumentFragment>
+  <main
+    class="main"
+  >
+    <div
+      class="loader"
+    />
+  </main>
+</DocumentFragment>
+`;
+
+exports[`Test card > Card data exist > Info card on display 2`] = `
+<DocumentFragment>
+  <a
+    class="card card__item"
+    href="/info/1"
+  >
+    <div
+      class="loader"
+    />
+    <div
+      class="card__content"
+    >
+      <h2
+        class="card__title"
+      >
+        Name
+      </h2>
+    </div>
+    <div
+      class="card__backdrop"
+    >
+      Name
+    </div>
+  </a>
+</DocumentFragment>
+`;

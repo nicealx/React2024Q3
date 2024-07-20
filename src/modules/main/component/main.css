@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.main__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
